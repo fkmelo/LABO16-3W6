@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.Drawing;
 
 namespace ZombieParty.Models
 {
@@ -19,6 +20,9 @@ namespace ZombieParty.Models
 
         public int Force { get; set; }
 
+        [ValidateNever]
+        public string Image { get; set; }
+
         // FACULTATIF on peut formellement identifier le champ lien
         // sinon le champ de foreignKey sera auto généré dans la BD
         [Display(Name = "Zombie Type")]
@@ -29,5 +33,6 @@ namespace ZombieParty.Models
 
         [ValidateNever] 
         public virtual List<HuntingLog> HuntingLogs { get; set; }
+
     }
 }
