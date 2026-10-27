@@ -1,0 +1,12 @@
+﻿@inject INotyfService Notyf
+
+
+@if (TempData[AppConstants.Success] != null)
+{
+    Notyf.Success(TempData[AppConstants.Success].ToString());
+}
+
+@if (TempData[AppConstants.Error] != null)
+{
+    Notyf.Error(TempData[AppConstants.Error].ToString());
+}
